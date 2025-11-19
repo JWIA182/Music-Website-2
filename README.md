@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Jakub Wiaderek – Mixing Engineer
 
-# Run and deploy your AI Studio app
+A single-page marketing site for a mixing engineer built with React and Vite. The project ships with Tailwind via CDN and bundles cleanly for static hosting.
 
-This contains everything you need to run your app locally.
+## Local development
 
-View your app in AI Studio: https://ai.studio/apps/drive/1S5Bokvfn5DJ37pfhJwr5szjn8XNxHsMm
+1. Install dependencies: `npm install`
+2. Start the dev server: `npm run dev`
 
-## Run Locally
+The site will be available at http://localhost:3000.
 
-**Prerequisites:**  Node.js
+## Build for production
 
+```
+npm run build
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+A static bundle is emitted to `dist/`. You can preview the production build locally with:
+
+```
+npm run preview
+```
+
+## Deploying to GitHub Pages
+
+The Vite configuration sets `base: './'`, so the generated assets work out-of-the-box on GitHub Pages (both user/organization sites and project sites). To publish the latest build:
+
+1. Build the project: `npm run build`
+2. Commit the contents of `dist/` to the branch you use for GitHub Pages (commonly `gh-pages`). One option is to use `git subtree`:
+   ```
+   git add dist && git commit -m "Deploy"
+   git subtree push --prefix dist origin gh-pages
+   ```
+   Alternatively, copy the `dist/` folder into a separate branch and push it manually.
+
+Once the branch is pushed, enable Pages in the repository settings and point it to the `gh-pages` branch (or the branch/folder you published).
+
+No API keys or Google Gemini dependencies are required for this project.
